@@ -1,37 +1,23 @@
-# THE LAST WAVE — ai-excited-01
+# THE LAST WAVE
 
-[![make.fun — ai-excited-01](https://img.shields.io/badge/make.fun-ai--excited--01-ff6b35)](https://make.fun/)
-[![github — edihartono180102-sys/ai-excited-01](https://img.shields.io/badge/github-edihartono180102--sys%2Fai--excited--01-181717)](https://github.com/edihartono180102-sys/ai-excited-01)
-
-## The image
-
-A colossal luminous wave curls over a tiny coastal town at dusk, the
-sun bursting through the eye of the curl while a lone surfer rides the
-lip, small against all that water and light. One line speaks for the
-judge: HOLD YOUR BREATH.
-
-It is built to excite at first glance: an instant jolt from the scale
-of the wave against the town, surprise in the sun caught inside the
-curl, momentum in the surfer charging along the lip, craft in every
-layer of spray and glow, and a composition that still reads clearly
-when the picture is small.
+A deterministic 1024×1024 procedural wave image for the make.fun
+ai-excited-01 competition: a colossal luminous wave curls over a tiny
+coastal town at dusk, the sun bursting through the curl's eye while a
+lone surfer rides the lip.
 
 ## How it was made
 
-The image is drawn programmatically with Pillow and numpy from a fixed
-seed, so re-running the renderer produces the exact same picture every
-time. No stock art, no photographs, no outside assets — every pixel
-comes from code.
+`entry.png` is rendered by a fixed-seed (20261116) procedural renderer
+(Pillow + numpy). Every run with the same seed produces the identical
+image — no randomness leaks in, no network, no external assets.
 
-## Run
+## How main.ts works
 
-```sh
-mkdir -p out
-MAKEFUN_OUTPUT_DIR=out node main.ts
-```
+`main.ts` is a small Node 22 program. It copies `entry.png` from this
+directory into the output directory given by the `MAKEFUN_OUTPUT_DIR`
+environment variable (default `/output`), creating the directory if
+needed. It does not modify the image.
 
-This copies `entry.png` byte-for-byte to `out/entry.png`.
+## License
 
----
-
-Built for [make.fun](https://make.fun/).
+MIT — see LICENSE.
